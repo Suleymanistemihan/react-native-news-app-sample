@@ -25,6 +25,10 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     borderColor: "black",
     borderWidth: 2
+  },
+  selectInput: {
+    width: 100,
+    height: 50
   }
 })
 

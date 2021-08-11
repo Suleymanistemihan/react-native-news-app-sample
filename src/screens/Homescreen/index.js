@@ -46,7 +46,7 @@ class HomeScreen extends Component {
           <View style={{ width: "100%", alignItems: "center" }}>
 
             {this.state.news && this.state.news.map((item, index,) => {
-              const a = new Date(item.publishedAt);
+              const date = new Date(item.publishedAt);
               if (index < 4) return null;
               return (
                 <TouchableOpacity key={index}
@@ -66,7 +66,7 @@ class HomeScreen extends Component {
                       </View>
 
                       <View style={{ justifyContent: "flex-end", alignItems: "flex-end", height: "50%" }}>
-                        <Text style={{ color: "#2c2d2e", fontWeight: "bold", marginHorizontal: 5, }}>{`Release date: ${a.getDay()}-${a.getMonth()}-${a.getUTCFullYear()}`}</Text>
+                        <Text style={{ color: "#2c2d2e", fontWeight: "bold", marginHorizontal: 5, }}>{`Release date: ${date.getDay()}-${date.getMonth()}-${date.getUTCFullYear()}`}</Text>
                       </View>
 
                     </View>

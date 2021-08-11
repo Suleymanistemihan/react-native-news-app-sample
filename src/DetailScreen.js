@@ -2,12 +2,11 @@ import React, { Component } from "react";
 import { Text, Button, View, Image, ScrollView, TouchableOpacity } from "react-native";
 
 
-
-
 class DetailScreen extends Component {
 
   render() {
     const { route: { params: { item } = {} } = {} } = this.props
+    const date = new Date(item.publishedAt);
     return (
       <View style={{ flex: 1, backgroundColor: "white", }}>
         <ScrollView style={{ width: "100%" }}>
@@ -20,7 +19,7 @@ class DetailScreen extends Component {
                 {item && <Image style={{ height: 300, width: 400 }} source={{ uri: item.urlToImage }} />}
               </View>
               <View style={{ alignSelf: "flex-end", marginHorizontal: 15 }}>
-                {item && <Text style={{ color: "#2c2d2e" }}>{item.publishedAt}</Text>}
+                {item && <Text style={{ color: "#2c2d2e" }}>{`Release date: ${date.getDay()}-${date.getMonth()}-${date.getUTCFullYear()}`}</Text>}
               </View>
               <Text style={{ fontWeight: "bold", fontSize: 20, color: "#2c2d2e", alignSelf: "flex-start" }} > Content:</Text>
               <View style={{ marginVertical: 25, marginHorizontal: 7.5 }}>
