@@ -35,11 +35,11 @@ class ConventerScreen extends Component {
   render() {
 
     return (
-      <View style={{ justifyContent: "center", alignItems: "center", height: "100%" }}>
-        <View style={{ width: "85%", height: 400, backgroundColor: "#e8e8e8", alignItems: "center", justifyContent: "center", borderRadius: 20 }}>
-          <Text style={{ fontSize: 35, height: 40 }}>USD</Text>
+      <View style={styles.mainContainer}>
+        <View style={styles.container}>
+          <Text style={styles.currencyText}>USD</Text>
           <Picker
-            style={{ width: 150, height: 35, marginTop: 15, }}
+            style={styles.picker}
             onValueChange={(itemValue, itemIndex) =>
               this.setState({ money: itemValue })
             }>
@@ -49,14 +49,14 @@ class ConventerScreen extends Component {
               )
             }
           </Picker>
-          <View style={{ backgroundColor: "#1DA1F2", marginVertical: 10, width: 60, height: 30, justifyContent: "center", alignItems: "center", borderWidth: 1, borderColor: "grey", borderRadius: 10 }}>
-            <Text style={{ fontWeight: "bold", fontSize: 15, color: "white" }}>{this.state.money}</Text>
+          <View style={styles.moneyContainer}>
+            <Text style={styles.moneyText}>{this.state.money}</Text>
           </View>
-          <View style={{ flexDirection: "row" }}>
-            <View style={{ alignItems: "center" }}>
-              <View style={{ width: 133, height: 35, backgroundColor: "white", borderWidth: 2, borderColor: "black", borderRadius: 10, justifyContent: "center", }}>
+          <View style={styles.inputMainContainer}>
+            <View style={styles.numberContainer}>
+              <View style={styles.numberInputContainer}>
                 <TextInput
-                  style={{height: 35, fontSize: 15, fontWeight: "bold", marginHorizontal: 10 }}
+                  style={styles.numberInput}
                   value={String(this.state.number)}
                   placeholder="Enter Price"
                   onChangeText={(number) => this.setState({ number })}
@@ -65,20 +65,20 @@ class ConventerScreen extends Component {
                 </TextInput>
               </View>
             </View>
-            <View style={{ height: 35, justifyContent: "center", alignItems: "center", width: 35 }}>
+            <View style={styles.equalContainer}>
               <Text style={{ fontSize: 35 }}>=</Text>
             </View>
-            <View style={{ justifyContent: "center", backgroundColor: "#e8e8e8", alignItems: "center", height: 35, width: 130, }}>
-              <View style={{ width: 130, height: 35, backgroundColor: "white", borderWidth: 2, borderColor: "black", alignItems: "center", justifyContent: "center", borderRadius: 10 }}>
-                <Text style={{ fontSize: 15, fontWeight: "bold" }}>
+            <View style={styles.resultContainer}>
+              <View style={styles.resultTextContainer}>
+                <Text style={styles.resultText}>
                   {this.state.result}
                 </Text>
               </View>
             </View>
           </View>
           <TouchableOpacity onPress={this.exchange}
-            style={{ backgroundColor: "#1DA1F2", borderWidth: 1, borderRadius: 10, width: 75, height: 35, borderColor: "grey", alignItems: "center", justifyContent: "center", marginTop: 10 }}>
-            <Text style={{ fontSize: 15, fontWeight: "bold", color: "white" }}>Change</Text>
+            style={styles.touchableButton}>
+            <Text style={{  }}>Change</Text>
           </TouchableOpacity>
         </View>
       </View>
