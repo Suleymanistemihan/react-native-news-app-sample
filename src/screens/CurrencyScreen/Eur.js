@@ -22,14 +22,14 @@ class TopTabEur extends Component {
           showsVerticalScrollIndicator={false}
         >
           <View style={styles.currencyContainer}>
-            {this.state.eur && this.state.eur.map((index, item, data, keys, a) => {
+            {this.state.eur && this.state.eur.map((item, index) => {
               return (
-                <View style={styles.currencyCard} key={a}>
-                  <View style={{ marginHorizontal: 10 }}>
-                    <Text style={{ color: "#2c2d2e", fontSize: 20, }}>{index[0]}</Text>
+                <View style={styles.currencyCard} key={index}>
+                  <View style={styles.moneyTextCont}>
+                    <Text style={styles.moneyText}>{item[0]}</Text>
                   </View>
-                  <View style={{ marginHorizontal: 10 }}>
-                    <Text style={{ color: "#2c2d2e", fontSize: 20, }}>{index[1]}</Text>
+                  <View style={styles.moneyTextCont}>
+                    <Text style={styles.moneyText}>{item[1]}</Text>
                   </View>
                 </View>
               )

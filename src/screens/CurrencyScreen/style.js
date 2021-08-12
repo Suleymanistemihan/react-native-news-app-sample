@@ -29,7 +29,14 @@ const styles = StyleSheet.create({
   selectInput: {
     width: 100,
     height: 50
+  },
+  moneyText: {
+    color: "#2c2d2e", fontSize: 20,
+  },
+  moneyTextCont: {
+    marginHorizontal: 10
   }
+
 })
 
 export default styles;

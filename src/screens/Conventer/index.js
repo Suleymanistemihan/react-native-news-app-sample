@@ -44,8 +44,8 @@ class ConventerScreen extends Component {
               this.setState({ money: itemValue })
             }>
             {
-              this.state.usd && this.state.usd.map((item, key) =>
-                <Picker.Item label={item[0]} value={item[1].toFixed(2)} key={key} />
+              this.state.usd && this.state.usd.map((item, index) =>
+                <Picker.Item label={item[0]} value={item[1].toFixed(2)} key={item} />
               )
             }
           </Picker>
@@ -78,7 +78,7 @@ class ConventerScreen extends Component {
           </View>
           <TouchableOpacity onPress={this.exchange}
             style={styles.touchableButton}>
-            <Text style={{  }}>Change</Text>
+            <Text style={{}}>Change</Text>
           </TouchableOpacity>
         </View>
       </View>

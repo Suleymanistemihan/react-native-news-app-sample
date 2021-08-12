@@ -21,14 +21,14 @@ class TopTabTry extends Component {
           showsVerticalScrollIndicator={false}
         >
           <View style={styles.currencyContainer}>
-            {this.state.try && this.state.try.map((index, item, data, keys, b) => {
+            {this.state.try && this.state.try.map((index, item,) => {
               return (
-                <View style={styles.currencyCard} key={b} >
-                  <View style={{ marginHorizontal: 10 }}>
-                    <Text style={{ color: "#2c2d2e", fontSize: 20, }}>{index[0]}</Text>
+                <View style={styles.currencyCard} key={item} >
+                  <View style={styles.moneyTextCont}>
+                    <Text style={styles.moneyText}>{index[0]}</Text>
                   </View>
-                  <View style={{ marginHorizontal: 10 }}>
-                    <Text style={{ color: "#2c2d2e", fontSize: 20, }}>{index[1]}</Text>
+                  <View style={styles.moneyTextCont}>
+                    <Text style={styles.moneyText}>{index[1]}</Text>
                   </View>
                 </View>
               )

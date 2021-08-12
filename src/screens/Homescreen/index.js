@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, ScrollView, Text, TouchableOpacity, Image, SafeAreaView, StatusBar, TextInput, } from "react-native";
 
-import style from "./style";
+import styles from "./style"
 
 class HomeScreen extends Component {
   constructor(props) {
@@ -17,24 +17,21 @@ class HomeScreen extends Component {
   render() {
     return (
 
-      < SafeAreaView style={{ alignItems: "center", width: "100%" }}>
-        <ScrollView style={{ width: "100%" }}>
-          <View style={{ height: 320, width: "96%", backgroundColor: "#e8e8e8", alignSelf: "center" }}>
+      < SafeAreaView style={styles.mainCont}>
+        <ScrollView style={styles.scMain}>
+          <View style={styles.sliderCont}>
             <ScrollView
               horizontal
               pagingEnabled
-              showsHorizontalScrollIndicator={false}
-            >
+              showsHorizontalScrollIndicator={false}>
               {this.state.news && this.state.news.map((item, index, data) => {
-
                 if (index > 3) return null;
                 return (
-                  <TouchableOpacity key={item}
-                    onPress={() => this.props.navigation.navigate("Detail", { item: item })}
-                  >
-                    <View style={{ alignItems: "center", justifyContent: "center", width: 395 }}>
-                      <Image style={{ width: "100%", height: 250, marginBottom: 5 }} source={{ uri: item.urlToImage }} />
-                      <Text style={{ color: "#2c2d2e", fontWeight: "bold", fontSize: 13, textAlign: "center", width: "90%", }}>
+                  <TouchableOpacity key={index}
+                    onPress={() => this.props.navigation.navigate("Detail", { item: item })}>
+                    <View style={styles.sliderView}>
+                      <Image style={styles.sliderImage} source={{ uri: item.urlToImage }} />
+                      <Text style={styles.sliderText}>
                         {item.title}
                       </Text>
                     </View>
@@ -43,32 +40,25 @@ class HomeScreen extends Component {
               })}
             </ScrollView>
           </View>
-          <View style={{ width: "100%", alignItems: "center" }}>
-
-            {this.state.news && this.state.news.map((item, index,) => {
-              const date = new Date(item.publishedAt);
+          <View style={styles.previousCont}>
+            {this.state.news && this.state.news.map((index, item) => {
+              const date = new Date(index.publishedAt);
               if (index < 4) return null;
               return (
-                <TouchableOpacity key={index}
-                  onPress={() => this.props.navigation.navigate("Detail", { item: item })}
-                  style={{ height: 135, width: "85%", flexDirection: "row", marginVertical: "3%", }}
-                >
-                  <View style={{ width: "100%", height: 135, flexDirection: "row", backgroundColor: "#e8e8e8", }}>
+                <TouchableOpacity key={item}
+                  onPress={() => this.props.navigation.navigate("Detail", { item: index })}
+                  style={styles.previousTouch}>
+                  <View style={styles.previousImageCont}>
                     <Image
-                      style={{ width: "50%", height: "100%", }}
-                      source={{ uri: item.urlToImage }} />
-
-
-                    <View style={{ width: "50%", height: 135, }}>
-
-                      <View style={{ height: "50%" }}>
-                        <Text style={{ fontSize: 14, color: "#2c2d2e", fontWeight: "bold", marginHorizontal: 10, marginVertical: 10 }}>{item.title}</Text>
+                      style={styles.previousImage}
+                      source={{ uri: index.urlToImage }} />
+                    <View style={styles.previousDetailCont}>
+                      <View style={styles.previousTitleCont}>
+                        <Text style={styles.previousTitle}>{index.title}</Text>
                       </View>
-
-                      <View style={{ justifyContent: "flex-end", alignItems: "flex-end", height: "50%" }}>
-                        <Text style={{ color: "#2c2d2e", fontWeight: "bold", marginHorizontal: 5, }}>{`Release date: ${date.getDay()}-${date.getMonth()}-${date.getUTCFullYear()}`}</Text>
+                      <View style={styles.previousDateCont}>
+                        <Text style={styles.previousDate}>{`Release date: ${date.getDay()}-${date.getMonth()}-${date.getUTCFullYear()}`}</Text>
                       </View>
-
                     </View>
                   </View>
                 </TouchableOpacity>
