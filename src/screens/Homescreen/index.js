@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, ScrollView, Text, TouchableOpacity, Image, SafeAreaView, StatusBar, TextInput, } from "react-native";
 
-
+import style from "./style";
 
 class HomeScreen extends Component {
   constructor(props) {

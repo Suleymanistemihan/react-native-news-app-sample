@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import { View, ScrollView, Text, TouchableOpacity, Image, } from "react-native";
 
-import styles from '../style/style';
+import styles from './style';
 
-class TopTabUsd extends Component {
+class TopTabTry extends Component {
   constructor(props) {
     super(props);
     this.state = {}
   }
   componentDidMount() {
-    fetch("https://api.exchangerate.host/latest?base=USD")
+    fetch("https://api.exchangerate.host/latest?base=TRY")
       .then(response => response.json())
-      .then((data) => this.setState({ usd: Object.entries(data.rates) }));
+      .then((data) => this.setState({ try: Object.entries(data.rates) }));
   }
 
   render() {
@@ -21,9 +21,9 @@ class TopTabUsd extends Component {
           showsVerticalScrollIndicator={false}
         >
           <View style={styles.currencyContainer}>
-            {this.state.usd && this.state.usd.map((index, item, data, keys, c) => {
+            {this.state.try && this.state.try.map((index, item, data, keys, b) => {
               return (
-                <View style={styles.currencyCard} key={c}>
+                <View style={styles.currencyCard} key={b} >
                   <View style={{ marginHorizontal: 10 }}>
                     <Text style={{ color: "#2c2d2e", fontSize: 20, }}>{index[0]}</Text>
                   </View>
@@ -40,4 +40,4 @@ class TopTabUsd extends Component {
   }
 }
 
-export default TopTabUsd;
+export default TopTabTry;

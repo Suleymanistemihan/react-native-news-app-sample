@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { Text, Button, View, Image, ScrollView, TouchableOpacity } from "react-native";
 
+import style from "./style";
 
-class DetailScreen extends Component {
+class DetailStack extends Component {
 
   render() {
     const { route: { params: { item } = {} } = {} } = this.props
@@ -33,19 +34,19 @@ class DetailScreen extends Component {
           </View>
         </ScrollView>
         <View style={{ flexDirection: "row", width: "100%", justifyContent: "space-around" }}>
-          <Image style={{ width: 25, height: 25 }} source={require("./image/icons/s1.png")} />
+          <Image style={{ width: 25, height: 25 }} source={require("./icons/share.png")} />
           <TouchableOpacity>
-            <Image style={{ width: 25, height: 25 }} source={require("./image/icons/i1.png")} />
+            <Image style={{ width: 25, height: 25 }} source={require("./icons/instagram.png")} />
           </TouchableOpacity>
           <TouchableOpacity>
-            <Image style={{ width: 25, height: 25 }} source={require("./image/icons/w1.png")} />
+            <Image style={{ width: 25, height: 25 }} source={require("./icons/twitter.png")} />
           </TouchableOpacity>
           <TouchableOpacity>
-            <Image style={{ width: 25, height: 25 }} source={require("./image/icons/t1.png")} />
+            <Image style={{ width: 25, height: 25 }} source={require("./icons/whatsapp.png")} />
           </TouchableOpacity>
         </View>
       </View >
     )
   }
 }
-export default DetailScreen;
+export default DetailStack;

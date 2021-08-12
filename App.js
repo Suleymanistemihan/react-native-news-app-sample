@@ -14,12 +14,12 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 
-import Welcome from './src/WelcomeScreen';
-import DetailScreen from './src/DetailScreen';
-import ConventerScreen from "./src/Conventer"
-import TopTabTry from "./src/TopTabScreen/Try";
-import TopTabUsd from "./src/TopTabScreen/Usd";
-import TopTabEur from './src/TopTabScreen/Eur';
+import Welcome from './src/screens/WelcomeScreen';
+import DetailStack from './src/screens/Homescreen/StackScreen/DetailStack';
+import ConventerScreen from "./src/screens/Conventer";
+import TopTabTry from "./src/screens/CurrencyScreen/Try";
+import TopTabUsd from "./src/screens/CurrencyScreen/Usd";
+import TopTabEur from './src/screens/CurrencyScreen/Eur';
 import HomeScreen from "./src/screens/Homescreen"
 
 const Bottom = createBottomTabNavigator();
@@ -94,7 +94,7 @@ export default class App extends Component {
               headerTitleStyle: { color: "grey", justifyContent: "center", alignSelf: "center" },
               headerStyle: { backgroundColor: "white", height: 60 },
             }} />
-          <Stack.Screen name="Detail" component={DetailScreen} options={{
+          <Stack.Screen name="Detail" component={DetailStack} options={{
             headerTitleStyle: { color: "grey" },
             title: "News Detail",
             headerStyle: { backgroundColor: "white", height: 60 }
