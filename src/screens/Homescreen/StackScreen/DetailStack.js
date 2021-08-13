@@ -10,8 +10,8 @@ class DetailStack extends Component {
     const date = new Date(item.publishedAt);
     return (
       <View style={styles.mainCont}>
-        <ScrollView style={styles.scCont}>
-          <View style={styles.detailCont}>
+        <View style={styles.detailCont}>
+          <ScrollView style={styles.scCont}>
             <View style={styles.titleCont}>
               {item && <Text style={styles.titleText} >{item.title}</Text>}
             </View>
@@ -32,19 +32,19 @@ class DetailStack extends Component {
                 {item && <Text style={styles.detailAuthorText} >{item.author}</Text>}
               </View>
             </View>
+          </ScrollView>
+          <View style={styles.detailShareCont}>
+            <Image style={styles.detailShareIcon} source={require("./icons/share.png")} />
+            <TouchableOpacity>
+              <Image style={styles.detailShareIcon} source={require("./icons/instagram.png")} />
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Image style={styles.detailShareIcon} source={require("./icons/twitter.png")} />
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Image style={styles.detailShareIcon} source={require("./icons/whatsapp.png")} />
+            </TouchableOpacity>
           </View>
-        </ScrollView>
-        <View style={styles.detailShareCont}>
-          <Image style={styles.detailShareIcon} source={require("./icons/share.png")} />
-          <TouchableOpacity>
-            <Image style={styles.detailShareIcon} source={require("./icons/instagram.png")} />
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <Image style={styles.detailShareIcon} source={require("./icons/twitter.png")} />
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <Image style={styles.detailShareIcon} source={require("./icons/whatsapp.png")} />
-          </TouchableOpacity>
         </View>
       </View >
     )

@@ -3,27 +3,44 @@ import { StyleSheet } from "react-native"
 
 const styles = StyleSheet.create({
   mainCont: {
-    alignItems: "center",
-    width: "100%"
+    flex: 1,
+    width: "100%",
+    height: "100%",
+    alignItems: "center"
   },
   scMain: {
     width: "100%"
   },
   sliderCont: {
-    height: 320,
-    width: "96%",
-    backgroundColor: "#e8e8e8",
-    alignSelf: "center"
-  },
-  sliderView: {
+    width: "100%",
+    height: 300,
     alignItems: "center",
-    justifyContent: "center",
-    width: 395
+
+  },
+  Header: {
+    marginVertical: 15,
+    fontWeight: "bold",
+    fontSize: 16,
+    color: "#2c2d2e",
+  },
+  scSlider: {
+    width: "100%"
+  },
+  sliderTouch: {
+    backgroundColor: "#e8e8e8",
+    width: 200,
+    height: 250,
+    marginHorizontal: 10,
+    alignItems: "center",
+    borderRadius: 5,
+    borderBottomWidth: 5,
+    borderColor: "#bfbfbf"
+
   },
   sliderImage: {
     width: "100%",
-    height: 250,
-    marginBottom: 5
+    height: 130,
+    marginBottom: 5,
   },
   sliderText: {
     color: "#2c2d2e",
@@ -31,6 +48,7 @@ const styles = StyleSheet.create({
     fontSize: 13,
     textAlign: "center",
     width: "90%",
+    marginTop: 20
   },
   previousCont: {
     width: "100%",
@@ -38,19 +56,25 @@ const styles = StyleSheet.create({
   },
   previousTouch: {
     height: 135,
-    width: "85%",
+    width: "95%",
     flexDirection: "row",
-    marginVertical: "3%"
+    marginVertical: "3%",
+    borderRadius: 5,
+    borderRightWidth: 5,
+    borderColor: "#bfbfbf",
+    backgroundColor: "#e8e8e8",
   },
   previousImageCont: {
     width: "100%",
     height: 135,
     flexDirection: "row",
-    backgroundColor: "#e8e8e8",
+
   },
   previousImage: {
     width: "50%",
     height: "100%",
+    borderTopLeftRadius: 5,
+    borderBottomLeftRadius: 5
   },
   previousDetailCont: {
     width: "50%",

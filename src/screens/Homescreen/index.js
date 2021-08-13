@@ -20,30 +20,33 @@ class HomeScreen extends Component {
       < SafeAreaView style={styles.mainCont}>
         <ScrollView style={styles.scMain}>
           <View style={styles.sliderCont}>
+            <Text style={styles.Header}>New Incoming News</Text>
             <ScrollView
+              style={styles.scSlider}
               horizontal
-              pagingEnabled
               showsHorizontalScrollIndicator={false}>
               {this.state.news && this.state.news.map((item, index, data) => {
-                if (index > 3) return null;
+                if (index > 4) return null;
                 return (
-                  <TouchableOpacity key={index}
-                    onPress={() => this.props.navigation.navigate("Detail", { item: item })}>
-                    <View style={styles.sliderView}>
+                  <View key={index} style={{}}>
+                    <TouchableOpacity
+                      style={styles.sliderTouch}
+                      onPress={() => this.props.navigation.navigate("Detail", { item: item })}>
                       <Image style={styles.sliderImage} source={{ uri: item.urlToImage }} />
                       <Text style={styles.sliderText}>
                         {item.title}
                       </Text>
-                    </View>
-                  </TouchableOpacity>
+                    </TouchableOpacity>
+                  </View>
                 )
               })}
             </ScrollView>
           </View>
           <View style={styles.previousCont}>
+            <Text style={styles.Header}>Previous News</Text>
             {this.state.news && this.state.news.map((index, item) => {
               const date = new Date(index.publishedAt);
-              if (index < 4) return null;
+              if (item < 5) return null;
               return (
                 <TouchableOpacity key={item}
                   onPress={() => this.props.navigation.navigate("Detail", { item: index })}

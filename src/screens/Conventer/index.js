@@ -78,7 +78,7 @@ class ConventerScreen extends Component {
           </View>
           <TouchableOpacity onPress={this.exchange}
             style={styles.touchableButton}>
-            <Text style={{}}>Change</Text>
+            <Text style={styles.touchableText}>Change</Text>
           </TouchableOpacity>
         </View>
       </View>

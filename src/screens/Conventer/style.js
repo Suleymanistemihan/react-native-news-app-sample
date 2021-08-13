@@ -3,9 +3,11 @@ import { StyleSheet } from "react-native"
 
 export default StyleSheet.create({
   mainContainer: {
+    flex: 1,
     justifyContent: "center",
     alignItems: "center",
     height: "100%",
+    width: "100%"
   },
   container: {
     width: "85%", height: 400,
@@ -14,9 +16,9 @@ export default StyleSheet.create({
     justifyContent: "center",
     borderRadius: 20
   },
-  currenctText: {
+  currencyText: {
     fontSize: 35,
-    height: 40
+    height: 40,
   },
   picker: {
     width: 150,
@@ -40,13 +42,14 @@ export default StyleSheet.create({
     color: "white"
   },
   inputMainContainer: {
-    flexDirection: "row"
+    flexDirection: "row",
+
   },
   numberContainer: {
     alignItems: "center"
   },
   numberInputContainer: {
-    width: 133,
+    width: 100,
     height: 35,
     backgroundColor: "white",
     borderWidth: 2,
@@ -71,10 +74,10 @@ export default StyleSheet.create({
     backgroundColor: "#e8e8e8",
     alignItems: "center",
     height: 35,
-    width: 130,
+    width: 100,
   },
   resultTextContainer: {
-    width: 130,
+    width: 100,
     height: 35,
     backgroundColor: "white",
     borderWidth: 2,
