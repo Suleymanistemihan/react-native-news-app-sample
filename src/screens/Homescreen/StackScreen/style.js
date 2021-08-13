@@ -5,24 +5,21 @@ const styles = StyleSheet.create({
   mainCont: {
     flex: 1,
     backgroundColor: "white",
-    width: "100%",
-    height: "100%"
-  },
-  scCont: {
-    width: "100%"
+    width: "95%",
+    height: "100%",
+    alignSelf: "center"
   },
   detailCont: {
     width: "100%",
-    height: "100%",
-    alignSelf: "center",
     alignItems: "center",
     backgroundColor: "#e8e8e8",
+    height: "100%"
   },
   titleCont: {
     width: "70%",
     marginVertical: 10,
     borderRadius: 10,
-    alignSelf: "center"
+    alignSelf: "center",
   },
   titleText: {
     marginVertical: 15,
@@ -32,17 +29,17 @@ const styles = StyleSheet.create({
   },
   detailCard: {
     alignItems: "center",
-    height: "50%",
+    width: "100%"
   },
   detailImage: {
-    height: 300,
-    width: 400
+    height: "90%",
+    width: "100%"
   },
   detailDateCont: {
     alignSelf: "flex-end",
     marginHorizontal: 15,
     width: "100%",
-    alignItems: "flex-end"
+    alignItems: "flex-end",
   },
   detailDate: {
     color: "#2c2d2e",
@@ -79,7 +76,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     width: "100%",
     justifyContent: "space-around",
-    backgroundColor: "white"
+    backgroundColor: "white",
+    marginTop: -25
   },
   detailShareIcon: {
     width: 25,

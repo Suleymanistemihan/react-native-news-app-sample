@@ -6,7 +6,7 @@ import SplashScreen from 'react-native-splash-screen';
 
 
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator, } from '@react-navigation/stack';
+import { createStackNavigator, TransitionPresets, } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationAction } from '@react-navigation/routers';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
@@ -21,6 +21,7 @@ import TopTabTry from "./src/screens/CurrencyScreen/Try";
 import TopTabUsd from "./src/screens/CurrencyScreen/Usd";
 import TopTabEur from './src/screens/CurrencyScreen/Eur';
 import HomeScreen from "./src/screens/Homescreen"
+import { Transition } from 'react-native-reanimated';
 
 const Bottom = createBottomTabNavigator();
 function BottomTabs() {
@@ -30,7 +31,8 @@ function BottomTabs() {
         style: { height: 40, backgroundColor: "white", },
         tabStyle: { justifyContent: "center", },
         activeTintColor: "#1DA1F2",
-        inactiveTintColor: "grey"
+        inactiveTintColor: "grey",
+
       }}
     >
       <Bottom.Screen name="Home" component={HomeScreen}
@@ -38,6 +40,7 @@ function BottomTabs() {
           title: "Home",
           tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons name="home" color={color} size={27} />
+
           ),
 
         }} />
@@ -87,7 +90,13 @@ export default class App extends Component {
   render() {
     return (
       <NavigationContainer>
-        <Stack.Navigator >
+        <Stack.Navigator
+          screenOptions={{
+            gestureEnabled: true,
+            gestureDirection: "horizontal",
+            ...TransitionPresets.RevealFromBottomAndroid
+          }}
+        >
           <Stack.Screen name="Home" component={BottomTabs}
             options={{
               title: "News App",
