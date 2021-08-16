@@ -1,21 +1,22 @@
 import React, { Component } from 'react';
 import { Image, View, ImageBackground } from 'react-native';
-
 const backG = require("./image/splash.png");
 
+import styles from './style';
 export default class Welcome extends Component {
   constructor(props) {
     super(props)
+    this.state = {}
     setTimeout(() => {
-      this.props.navigation.navigate("Home");
+      this.props.navigation.replace("Home");
 
-    }, 50);
+    }, 5000);
   }
   render() {
     return (
-      <ImageBackground style={{ width: "106%", height: "100%" }}>
-        <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-          <Image source={backG} style={{ height: "100%", width: "100%" }}></Image>
+      <ImageBackground style={styles.imgBg}>
+        <View style={styles.imageContainer}>
+          <Image source={backG} style={styles.image}></Image>
         </View>
 
       </ImageBackground>

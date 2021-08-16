@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { View, ScrollView, Text, TouchableOpacity, Image, SafeAreaView, StatusBar, TextInput, ActivityIndicator } from "react-native";
 
+
+
 import styles from "./style"
 
 class HomeScreen extends Component {
@@ -17,10 +19,13 @@ class HomeScreen extends Component {
   render() {
     return (
 
-      < SafeAreaView style={styles.mainCont}>
+      <SafeAreaView style={styles.mainCont}>
+
         <ScrollView style={styles.scMain}>
           <View style={styles.sliderCont}>
+
             <Text style={styles.Header}>New Incoming News</Text>
+
             <ScrollView
               style={styles.scSlider}
               horizontal

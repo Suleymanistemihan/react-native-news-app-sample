@@ -14,7 +14,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 
-import Welcome from './src/screens/WelcomeScreen';
+import WelcomeScreen from "./src/screens/WelcomeScreen";
 import DetailStack from './src/screens/Homescreen/StackScreen/DetailStack';
 import ConventerScreen from "./src/screens/Conventer";
 import TopTabTry from "./src/screens/CurrencyScreen/Try";
@@ -97,6 +97,10 @@ export default class App extends Component {
             ...TransitionPresets.RevealFromBottomAndroid
           }}
         >
+          <Stack.Screen name="WelcomeScreen" component={WelcomeScreen}
+            options={{
+              headerShown: false
+            }} />
           <Stack.Screen name="Home" component={BottomTabs}
             options={{
               title: "News App",
