@@ -26,7 +26,7 @@ export default StyleSheet.create({
     marginTop: 15,
   },
   moneyContainer: {
-    backgroundColor: "#1DA1F2",
+    backgroundColor: "#a8a8a8",
     marginVertical: 10,
     width: 60,
     height: 30,
@@ -39,7 +39,7 @@ export default StyleSheet.create({
   moneyText: {
     fontWeight: "bold",
     fontSize: 15,
-    color: "white"
+    color: "black"
   },
   inputMainContainer: {
     flexDirection: "row",
@@ -64,10 +64,15 @@ export default StyleSheet.create({
     marginHorizontal: 10
   },
   equalContainer: {
-    height: 35,
+    height: 30,
     justifyContent: "center",
     alignItems: "center",
     width: 35
+  },
+  equalText: {
+    fontSize: 30,
+    alignSelf: "center",
+    fontWeight: "bold"
   },
   resultContainer: {
     justifyContent: "center",
@@ -91,8 +96,8 @@ export default StyleSheet.create({
     fontWeight: "bold"
   },
   touchableButton: {
-    backgroundColor: "#1DA1F2",
-    borderWidth: 1,
+    backgroundColor: "#a8a8a8",
+    borderWidth: 2,
     borderRadius: 10,
     width: 75,
     height: 35,
@@ -104,6 +109,6 @@ export default StyleSheet.create({
   touchableText: {
     fontSize: 15,
     fontWeight: "bold",
-    color: "white"
+    color: "black"
   }
 })

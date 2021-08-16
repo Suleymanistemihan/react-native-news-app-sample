@@ -66,7 +66,7 @@ class ConventerScreen extends Component {
               </View>
             </View>
             <View style={styles.equalContainer}>
-              <Text style={{ fontSize: 35 }}>=</Text>
+              <Text style={styles.equalText}>=</Text>
             </View>
             <View style={styles.resultContainer}>
               <View style={styles.resultTextContainer}>
