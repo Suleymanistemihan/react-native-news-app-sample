@@ -12,7 +12,7 @@ class HomeScreen extends Component {
   }
   componentDidMount() {
 
-    fetch("https://newsapi.org/v2/everything?domains=wsj.com&apiKey=ebc09923df8f44aa94337182618c6e28")
+    fetch("https://newsapi.org/v2/top-headlines?country=tr&apiKey=b126c9c85a804b01a06a95990a6bd6c7")
       .then((response) => response.json())
       .then((data) => this.setState({ news: data.articles }));
   }
